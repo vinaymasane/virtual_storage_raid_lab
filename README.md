@@ -1,2 +1,2 @@
-# virtual_storage_raid_lab
-Test Stack : RAID Storage Virtualization
+# Virtual Storage RAID Lab
+Tech Stack : RAID Storage Virtualization
