@@ -1,7 +1,9 @@
 #!/bin/bash
 
-set -e
+### Common functions for the host machine
+source ./common_host.sh
 
+### Configure KVM and related services on the host machine
 apt install -y cpu-checker
 
 kvm-ok || true
@@ -14,6 +16,5 @@ usermod -aG kvm $USER
 
 usermod -aG libvirt $USER
 
-systemctl enable libvirtd
-
-systemctl start libvirtd
+### Ensure that the libvirtd service is running
+ensure_service_running libvirtd

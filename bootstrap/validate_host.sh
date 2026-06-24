@@ -1,5 +1,7 @@
 #!/bin/bash
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
+### Validate the host machine for RAID Lab
 echo "=== CPU ==="
 lscpu
 
