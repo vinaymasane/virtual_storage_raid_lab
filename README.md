@@ -10,18 +10,8 @@ Build a production-grade Linux image capable of:
 * Participating in a software RAID1 mirror using mdadm
 * Successfully booting as a RAID-backed virtual machine
 
-## Host Environment
-
-Recommended Host OS:
-
-Debian 13 (Trixie)
-
-Required Packages:
-
-Refer to the PACKAGEs list under file: `./bootstrap/preinstall_host.sh`
-
-
 ## System Architecture
+
 ```
  disk_proto.qcow2
         |
@@ -44,4 +34,28 @@ Refer to the PACKAGEs list under file: `./bootstrap/preinstall_host.sh`
                 GRUB2
                    |
              QEMU Virtual VM
+```
+
+
+## Host Environment
+
+### Recommended Host OS:
+
+Debian 13 (Trixie)
+
+### Required Packages:
+
+Refer to the PACKAGEs list under file: `./bootstrap/preinstall_host.sh`
+
+### Config and Validation:
+```
+cd virtual-storage-raid-lab
+
+chmod +x bootstrap/*.sh
+
+sudo ./bootstrap/install_prereqs.sh
+
+sudo ./bootstrap/configure_kvm.sh
+
+./bootstrap/validate_host.sh
 ```
